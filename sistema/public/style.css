@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #EEF2F7; color: #1A2B3C; }
+.container { min-width: 900px; max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+.cartao { background: #FFFFFF; border: 1px solid #D5DEE8; border-radius: 12px; padding: 24px; }
+.login { max-width: 420px; margin: 60px auto; }
+.login h1 { margin: 0; color: #004A8D; }
+.sub { margin: 4px 0 20px; color: #52647B; }
+label { display: block; font-weight: bold; margin: 12px 0 4px; }
+input, select { width: 100%; padding: 10px; border: 1px solid #B8C4D2; border-radius: 8px; font-size: 16px; }
+button { margin-top: 16px; padding: 10px 18px; border: 0; border-radius: 8px; background: #004A8D; color: #FFFFFF; font-size: 16px; font-weight: bold; cursor: pointer; }
+button.sec { background: #FFFFFF; color: #004A8D; border: 2px solid #004A8D; margin-top: 0; }
+.msg { min-height: 22px; margin: 12px 0 0; font-weight: bold; }
+.msg.erro { color: #B42318; }
+.msg.ok { color: #1D7F56; }
+.ajuda { font-size: 14px; color: #A9B4BF; margin: 6px 0 0; }
+.topo { display: flex; justify-content: space-between; align-items: center; background: #004A8D; color: #FFFFFF; padding: 14px 20px; border-radius: 12px; }
+.versao { font-size: 13px; opacity: .8; }
+.usuario { display: flex; gap: 10px; align-items: center; }
+.perfil { background: #F7941D; color: #1A1100; padding: 2px 8px; border-radius: 99px; font-size: 13px; font-weight: bold; }
+.abas { display: flex; gap: 8px; margin: 18px 0 12px; }
+.aba { margin: 0; background: #FFFFFF; color: #004A8D; border: 2px solid #D5DEE8; }
+.aba.ativa { border-color: #004A8D; background: #E3EDF8; }
+.painel h2 { margin-top: 0; }
+.grade { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 16px; align-items: end; }
+.filtros { display: flex; gap: 16px; align-items: end; margin-bottom: 16px; }
+.filtros > div { flex: 1; }
+.tabela { width: 100%; border-collapse: collapse; }
+.tabela th, .tabela td { text-align: left; padding: 10px; border-bottom: 1px solid #D5DEE8; }
+.tabela th { background: #F2F5F9; }
+.vazio { color: #52647B; text-align: center; }
+.btn-x { margin: 0; padding: 4px 10px; background: #FFFFFF; color: #B42318; border: 2px solid #B42318; }
+.lista { list-style: none; padding: 0; margin: 0; }
+.lista li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #D5DEE8; }
+.lista li button { margin: 0; }

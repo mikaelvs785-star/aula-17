@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LabReserva · Reserva de laboratórios</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== TELA DE LOGIN ===== -->
+  <section id="tela-login" class="cartao login">
+    <h1>LabReserva</h1>
+    <p class="sub">Reserva de laboratórios · SENAC-DF</p>
+    <form id="form-login" novalidate>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" data-cy="login-email" autocomplete="username">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" data-cy="login-senha" autocomplete="current-password">
+      <button type="submit" data-cy="login-entrar">Entrar</button>
+      <p id="msg-login" class="msg" role="alert" data-cy="login-mensagem"></p>
+    </form>
+  </section>
+
+  <!-- ===== SISTEMA ===== -->
+  <section id="tela-sistema" hidden>
+    <header class="topo">
+      <div><strong>LabReserva</strong> <span class="versao">v1.4</span></div>
+      <div class="usuario"><span id="nome-usuario" data-cy="usuario-logado"></span> <span id="perfil-usuario" class="perfil"></span>
+        <button id="btn-sair" class="sec" data-cy="sair">Sair</button></div>
+    </header>
+
+    <nav class="abas" role="tablist">
+      <button role="tab" class="aba ativa" data-aba="reservar" data-cy="aba-reservar">Nova reserva</button>
+      <button role="tab" class="aba" data-aba="agenda" data-cy="aba-agenda">Agenda do laboratório</button>
+      <button role="tab" class="aba" data-aba="minhas" data-cy="aba-minhas">Minhas reservas</button>
+    </nav>
+
+    <!-- Nova reserva -->
+    <div id="painel-reservar" class="cartao painel">
+      <h2>Nova reserva</h2>
+      <form id="form-reserva" novalidate>
+        <div class="grade">
+          <div><label for="r-lab">Laboratório</label>
+            <select id="r-lab" data-cy="reserva-lab"><option value="">Selecione</option></select>
+            <p id="info-lab" class="ajuda"></p></div>
+          <div><label for="r-data">Data</label><input type="date" id="r-data" data-cy="reserva-data"></div>
+          <div><label for="r-inicio">Início</label><input type="time" id="r-inicio" data-cy="reserva-inicio"></div>
+          <div><label for="r-fim">Fim</label><input type="time" id="r-fim" data-cy="reserva-fim"></div>
+          <div><label for="r-turma">Turma</label><input type="text" id="r-turma" data-cy="reserva-turma" placeholder="Ex.: 2025.08.179"></div>
+          <div><input type="number" id="r-alunos" data-cy="reserva-alunos" placeholder="Nº de alunos" min="1"></div>
+        </div>
+        <p class="ajuda">Reservas de segunda a sexta, entre 07:00 e 22:00, com no máximo 4 horas.</p>
+        <button type="submit" data-cy="reserva-salvar">Reservar</button>
+        <p id="msg-reserva" class="msg" role="alert" data-cy="reserva-mensagem"></p>
+      </form>
+    </div>
+
+    <!-- Agenda -->
+    <div id="painel-agenda" class="cartao painel" hidden>
+      <h2>Agenda do laboratório</h2>
+      <div class="filtros">
+        <div><label for="a-lab">Laboratório</label><select id="a-lab" data-cy="agenda-lab"></select></div>
+        <div><label for="a-data">Data</label><input type="date" id="a-data" data-cy="agenda-data"></div>
+        <button id="btn-buscar" class="sec" data-cy="agenda-buscar">Ver agenda</button>
+      </div>
+      <table class="tabela" data-cy="agenda-tabela">
+        <thead><tr><th>Início</th><th>Fim</th><th>Turma</th><th>Alunos</th><th>Responsável</th><th>Ações</th></tr></thead>
+        <tbody id="agenda-corpo"><tr><td colspan="6" class="vazio">Escolha o laboratório e a data.</td></tr></tbody>
+      </table>
+      <p id="msg-agenda" class="msg" role="status" data-cy="agenda-mensagem"></p>
+    </div>
+
+    <!-- Minhas reservas -->
+    <div id="painel-minhas" class="cartao painel" hidden>
+      <h2>Minhas reservas</h2>
+      <ul id="lista-minhas" class="lista" data-cy="minhas-lista"></ul>
+      <p id="msg-minhas" class="msg" role="status" data-cy="minhas-mensagem"></p>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+﻿ID;Requisito;Técnica;Título do caso;Pré-condição;Passos;Dados de entrada;Resultado esperado;Prioridade
+CT01;RF01;Partição de equivalência;Login com dados válidos;Sistema ligado;1. Abrir a tela 2. Informar e-mail e senha 3. Clicar em Entrar;instrutor1@senac.br / 123456;Entra no sistema e mostra "Ana Instrutora";Alta
+CT02;;;;;;;;
